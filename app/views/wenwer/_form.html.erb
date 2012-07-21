@@ -1,0 +1,12 @@
+<%= form_for @event do |f| %>
+
+<br>	<%= f.label :category %> 	<%= f.text_field :category %>
+|		<%= f.label :name %> 		<%= f.text_field :name %>
+<br>	<%= f.label :date %> 		<%= f.text_field :date %>
+|		<%= f.label :venue %> 		<%= f.text_field :venue %>
+<br>	<%= f.label :image %> 		<%= f.text_field :image %>
+|		<%= f.label :url, "URL Link" %> 		<%= f.text_field :url %>
+
+<p><%= f.submit %></p>
+
+	<% end %>

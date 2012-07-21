@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>A Farewell to Colors by Bryant Smith</title>
+</head>
+
+<body>
+	<div id="page">
+		
+        <div id="header">
+        	<h1><a href="/">wenwer</a></h1>
+            <h2>Find out when and where everything is.</h2>
+            
+</div>
+  	<div id="bar">
+        	<div class="link"><a href="/">home</a></div>
+            <div class="link"><a href="/about">about</a></div>
+            <div class="link"><a href="/add_event">add event</a></div>
+  	</div>
+        
+	<%= form_tag "/detail/#{@event.id}" do %>
+		<div class="contentTitle">
+			<h1>
+				<%= text_field_tag :name, @event.name %>
+			</h1>
+		</div>
+		
+        <div class="contentText">
+          
+			
+			<p style="text-align:center;">	<%= label_tag :image,image_tag("#{@event.image}", :size => "100x100") %></p>
+			<p style="text-align:center;">	<%= text_field_tag :image, @event.image %></p>
+			</p>
+			 <table>
+			 	<tr>
+			 		<td><b><%= label_tag :category,"Category" %></b></td>
+					<td><b><%= label_tag :date,"Date" %></b></td>
+					<td><b><%= label_tag :venue,"Venue" %></b></td>
+			 	</tr>				
+				<tr>
+					<td>	<%= text_field_tag :category, @event.category %></td>
+					<td>	<%= text_field_tag :date, @event.date %> </td>
+					<td>	<%= text_field_tag :venue, @event.venue %> </td>
+				</tr>				
+			 </table>
+			<p><%= submit_tag "Update Event" %></p>
+        	<p><%= link_to "delete event", "/detail/#{@event.id}", :method => 'delete' %></p>
+
+        </div>
+	<% end %>
+</div>
+        <div id="footer"><a href="http://www.aszx.net">web development</a> by <a href="http://www.bryantsmith.com">bryant smith</a> | <a href="http://www.quackit.com">web tutorials</a> | <a href="http://www.htmlcodes.me">HTML code</a> | <a href="http://www.free-templates.me">free templates</a> 
+		</div>
+</body>
+</html>
